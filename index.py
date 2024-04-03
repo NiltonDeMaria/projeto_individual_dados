@@ -28,17 +28,48 @@ def busca():
                        '''))
 
     if buscaValor == 1:
-        criterioEntrevista = int(input("Digite o critério da entrevista: "))
-        criterioTesteTeorico = int(input("Digite o critério do Teste Teórico: "))
-        criterioTestePratico = int(input("Digite o critério do Teste Prático: "))
-        criterioSoft = int(input("Digite o critério da Avaliação de Soft Skills: "))
+        
+        while True:
+            try:
+                criterioEntrevista = int(input("Digite o critério da entrevista: "))
+                break
+            except ValueError:
+                print('Essa não é uma resposta válida\n')
+        
+        while True:
+            try:
+                criterioTesteTeorico = int(input("Digite o critério do Teste Teórico: "))
+                break
+            except ValueError:
+                print('Essa não é uma resposta válida\n')
+
+        while True:
+            try:
+                criterioTestePratico = int(input("Digite o critério do Teste Prático: "))
+                break
+            except ValueError:
+                print('Essa não é uma resposta válida\n')
+        
+        while True:
+            try:
+                criterioSoft = int(input("Digite o critério da Avaliação de Soft Skills: "))
+                break
+            except ValueError:
+                print('Essa não é uma resposta válida\n')
 
         buscaCandidatos(criterioEntrevista, criterioTesteTeorico, criterioTestePratico, criterioSoft)
 
         busca()
 
     elif buscaValor == 2:
-        nCandidato = int(input("Digite o número do candidato: "))
+        
+        while True:
+            try:
+                nCandidato = int(input("Digite o número do candidato: "))
+                break
+            except ValueError:
+                print('Essa não é uma resposta válida\n')
+
         print(f"   Candidato {nCandidato}: e{candidatosLista[nCandidato-1][0]}_t{candidatosLista[nCandidato-1][1]}_p{candidatosLista[nCandidato-1][2]}_s{candidatosLista[nCandidato-1][3]}")
 
         busca()
