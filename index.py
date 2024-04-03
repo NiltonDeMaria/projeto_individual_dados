@@ -69,6 +69,10 @@ def busca():
                 break
             except ValueError:
                 print('Essa não é uma resposta válida\n')
+        
+        if nCandidato < 1 or nCandidato > len(candidatosLista):
+            print("Candidato inexistente, tente novamente.")
+            busca()
 
         print(f"   Candidato {nCandidato}: e{candidatosLista[nCandidato-1][0]}_t{candidatosLista[nCandidato-1][1]}_p{candidatosLista[nCandidato-1][2]}_s{candidatosLista[nCandidato-1][3]}")
 
